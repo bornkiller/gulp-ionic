@@ -56,12 +56,14 @@ function seekClassAttr(bodyTag) {
 
 /**
  * @description - seek class name which should inject into body
- * @name module:base/seek.seekCordovaClass
+ * @name module:base/sonar.seekCordovaClass
  *
  * @param {string} platform - which hybrid platform, like ios, android
  * @returns {boolean|string}
  */
 function seekCordovaClass(platform) {
+  if (!platform) return 'platform-h5';
+
   const platformClass = 'platform-' + platform;
   const cordovaClass = 'platform-cordova platform-webview';
 
