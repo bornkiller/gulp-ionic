@@ -31,10 +31,6 @@ describe('sonar sub module', function () {
     sonar.seekClassAttr('<body class="text-info">').trim().should.equal('class="text-info"')
   });
 
-  it('should generate h5 class when zero argument', function () {
-    sonar.seekCordovaClass().trim().should.equal('platform-h5');
-  });
-
   it('should generate related cordova class', function () {
     sonar.seekCordovaClass('ios').trim().should.equal('platform-ios platform-cordova platform-webview');
     sonar.seekCordovaClass('android').trim().should.equal('platform-android platform-cordova platform-webview');

@@ -62,8 +62,6 @@ function seekClassAttr(bodyTag) {
  * @returns {boolean|string}
  */
 function seekCordovaClass(platform) {
-  if (!platform) return 'platform-h5';
-
   const platformClass = 'platform-' + platform;
   const cordovaClass = 'platform-cordova platform-webview';
 

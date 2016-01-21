@@ -29,7 +29,8 @@ exports.injectAngularApp = injectAngularApp;
  * @returns {boolean|string}
  */
 function injectManifest(htmlTag, manifest) {
-  return manifest && manifestRegExp.test(htmlTag) ? htmlTag : htmlTag.replace('>', ' manifest="' + manifest + '">');
+  if (!manifest) return htmlTag;
+  return manifestRegExp.test(htmlTag) ? htmlTag : htmlTag.replace('>', ' manifest="' + manifest + '">');
 }
 
 /**
@@ -68,5 +69,6 @@ function injectCordovaClass(bodyTag, platform) {
  * @returns {boolean|string}
  */
 function injectAngularApp(bodyTag, application) {
-  return application && applicationRegExp.test(bodyTag) ? bodyTag : bodyTag.replace('>', ' ng-app="' + application + '">');
+  if (!application) return bodyTag;
+  return applicationRegExp.test(bodyTag) ? bodyTag : bodyTag.replace('>', ' ng-app="' + application + '">');
 }
