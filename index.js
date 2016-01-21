@@ -52,7 +52,7 @@ function plugin(options) {
 
   function transform(file, enc, callback) {
     if (file.isNull()) {
-      return callback(null, file);
+      return callback();
     }
 
     if (file.isStream()) {
