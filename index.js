@@ -4,7 +4,7 @@
  * - inject manifest modify body class like platform-ios, platform-cordova, platform-webview
  * - and declare ng-app directive
  *
- * @version v0.1.0
+ * @version v0.1.1
  * @author bornkiller <hjj491229492@hotmail.com>
  * @copyright bornkiller personal project
  * @license MIT
