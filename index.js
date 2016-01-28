@@ -4,7 +4,7 @@
  * - inject manifest modify body class like platform-ios, platform-cordova, platform-webview
  * - and declare ng-app directive
  *
- * @version v0.1.1
+ * @version v0.1.5
  * @author bornkiller <hjj491229492@hotmail.com>
  * @copyright bornkiller personal project
  * @license MIT
@@ -22,7 +22,6 @@ const PluginError = gutil.PluginError;
 
 const sonar = require('./base/sonar.js');
 const injector = require('./base/injector.js');
-
 const PLUGIN_NAME = 'gulp-ionic';
 /**
  * @description - gulp-ionic default options
@@ -39,17 +38,15 @@ const defaults = {
  * @module gulp-ionic
  * @type function
  */
-exports = module.exports = plugin;
+module.exports = plugin;
 
 /**
- * @description - generate transform stream prepare ionic base html
- * @alias gulp-ionic
+ * @description - implement about gulp-ionic plugin
  *
  * @param {options} options
+ * @returns {*}
  */
-function plugin(options) {
-  options = _.defaults(options || {}, defaults);
-
+function implement(options) {
   function transform(file, enc, callback) {
     if (file.isNull()) {
       return callback();
@@ -80,4 +77,16 @@ function plugin(options) {
   }
 
   return through(transform);
+}
+
+/**
+ * @description - generate transform stream prepare ionic base html
+ * @alias gulp-ionic
+ *
+ * @param {options} options
+ */
+function plugin(options) {
+  options = _.defaults(options || {}, defaults);
+
+  return implement(_.clone(options));
 }

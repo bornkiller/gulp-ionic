@@ -1,6 +1,6 @@
 {
   "name": "gulp-ionic",
-  "version": "0.1.1",
+  "version": "0.1.5",
   "description": "tiny wrap for ionic prepare, inject manifest, modify body class like platform-ios, platform-cordova, platform-webview, declare ng-app.",
   "main": "index.js",
   "directories": {
